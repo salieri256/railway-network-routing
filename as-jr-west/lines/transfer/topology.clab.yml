@@ -1,0 +1,30 @@
+name: jr-west-transfer
+topology:
+  defaults:
+    kind: linux
+    image: quay.io/frrouting/frr:10.4.0
+    binds:
+      - ../../nodes/common/daemons:/etc/frr/daemons
+      - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
+
+  nodes:
+    tennoji:
+      binds:
+        - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
+
+    shin-imamiya:
+      binds:
+        - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
+
+    nishikujo:
+      binds:
+        - ../../nodes/nishikujo/frr.conf:/etc/frr/frr.conf
+
+    osaka:
+      binds:
+        - ../../nodes/osaka/frr.conf:/etc/frr/frr.conf
+
+    kyobashi:
+      binds:
+        - ../../nodes/kyobashi/frr.conf:/etc/frr/frr.conf
+

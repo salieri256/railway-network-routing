@@ -1,0 +1,3 @@
+zebra=yes
+ospfd=yes
+ospfd_instances=1
