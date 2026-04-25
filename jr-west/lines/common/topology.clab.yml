@@ -1,4 +1,4 @@
-name: jr-west-transfer
+name: jr-west-common
 topology:
   defaults:
     kind: linux

@@ -1,4 +1,4 @@
-name: osaka-loop-line
+name: jr-west-osaka-loop-line
 topology:
   defaults:
     kind: linux
@@ -8,10 +8,10 @@ topology:
       - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
 
   nodes:
-    clab-jr-west-transfer-tennoji:
+    clab-jr-west-common-tennoji:
       kind: ext-container
 
-    clab-jr-west-transfer-shin-imamiya:
+    clab-jr-west-common-shin-imamiya:
       kind: ext-container
 
     imamiya:
@@ -30,7 +30,7 @@ topology:
       binds:
         - ../../nodes/bentencho/frr.conf:/etc/frr/frr.conf
 
-    clab-jr-west-transfer-nishikujo:
+    clab-jr-west-common-nishikujo:
       kind: ext-container
 
     noda:
@@ -41,7 +41,7 @@ topology:
       binds:
         - ../../nodes/fukushima/frr.conf:/etc/frr/frr.conf
 
-    clab-jr-west-transfer-osaka:
+    clab-jr-west-common-osaka:
       kind: ext-container
 
     temma:
@@ -52,7 +52,7 @@ topology:
       binds:
         - ../../nodes/sakuranomiya/frr.conf:/etc/frr/frr.conf
 
-    clab-jr-west-transfer-kyobashi:
+    clab-jr-west-common-kyobashi:
       kind: ext-container
 
     osakajokoen:
@@ -80,22 +80,22 @@ topology:
         - ../../nodes/teradacho/frr.conf:/etc/frr/frr.conf
 
   links:
-    - endpoints: ["clab-jr-west-transfer-tennoji:to-shiya", "clab-jr-west-transfer-shin-imamiya:to-ten"]
-    - endpoints: ["clab-jr-west-transfer-shin-imamiya:to-ima", "imamiya:to-shiya"]
+    - endpoints: ["clab-jr-west-common-tennoji:to-shiya", "clab-jr-west-common-shin-imamiya:to-ten"]
+    - endpoints: ["clab-jr-west-common-shin-imamiya:to-ima", "imamiya:to-shiya"]
     - endpoints: ["imamiya:to-ara", "ashiharabashi:to-ima"]
     - endpoints: ["ashiharabashi:to-tase", "taisho:to-ara"]
     - endpoints: ["taisho:to-hete", "bentencho:to-tase"]
-    - endpoints: ["bentencho:to-niku", "clab-jr-west-transfer-nishikujo:to-hete"]
-    - endpoints: ["clab-jr-west-transfer-nishikujo:to-nota", "noda:to-niku"]
+    - endpoints: ["bentencho:to-niku", "clab-jr-west-common-nishikujo:to-hete"]
+    - endpoints: ["clab-jr-west-common-nishikujo:to-nota", "noda:to-niku"]
     - endpoints: ["noda:to-fuku", "fukushima:to-nota"]
-    - endpoints: ["fukushima:to-osa", "clab-jr-west-transfer-osaka:to-fuku"]
-    - endpoints: ["clab-jr-west-transfer-osaka:to-tema", "temma:to-osa"]
+    - endpoints: ["fukushima:to-osa", "clab-jr-west-common-osaka:to-fuku"]
+    - endpoints: ["clab-jr-west-common-osaka:to-tema", "temma:to-osa"]
     - endpoints: ["temma:to-sara", "sakuranomiya:to-tema"]
-    - endpoints: ["sakuranomiya:to-kiha", "clab-jr-west-transfer-kyobashi:to-sara"]
-    - endpoints: ["clab-jr-west-transfer-kyobashi:to-oshi", "osakajokoen:to-kiha"]
+    - endpoints: ["sakuranomiya:to-kiha", "clab-jr-west-common-kyobashi:to-sara"]
+    - endpoints: ["clab-jr-west-common-kyobashi:to-oshi", "osakajokoen:to-kiha"]
     - endpoints: ["osakajokoen:to-momi", "morinomiya:to-oshi"]
     - endpoints: ["morinomiya:to-tsuri", "tamatsukuri:to-momi"]
     - endpoints: ["tamatsukuri:to-tsuha", "tsuruhashi:to-tsuri"]
     - endpoints: ["tsuruhashi:to-moni", "momodani:to-tsuha"]
     - endpoints: ["momodani:to-teta", "teradacho:to-moni"]
-    - endpoints: ["teradacho:to-ten", "clab-jr-west-transfer-tennoji:to-teta"]
+    - endpoints: ["teradacho:to-ten", "clab-jr-west-common-tennoji:to-teta"]
