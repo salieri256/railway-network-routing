@@ -1,4 +1,5 @@
 name: jr-west-common
+prefix: __lab-name
 topology:
   defaults:
     kind: linux
