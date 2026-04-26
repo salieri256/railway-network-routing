@@ -12,6 +12,10 @@ topology:
     tennoji:
       binds:
         - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
+    
+    imamiya:
+      binds:
+        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
 
     shin-imamiya:
       binds:

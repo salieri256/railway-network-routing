@@ -15,9 +15,8 @@ topology:
     jr-west-common-shin-imamiya:
       kind: ext-container
 
-    imamiya:
-      binds:
-        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
+    jr-west-common-imamiya:
+      kind: ext-container
 
     ashiharabashi:
       binds:
@@ -82,8 +81,8 @@ topology:
 
   links:
     - endpoints: ["jr-west-common-tennoji:to-shiya", "jr-west-common-shin-imamiya:to-ten"]
-    - endpoints: ["jr-west-common-shin-imamiya:to-ima", "imamiya:to-shiya"]
-    - endpoints: ["imamiya:to-ara", "ashiharabashi:to-ima"]
+    - endpoints: ["jr-west-common-shin-imamiya:to-ima", "jr-west-common-imamiya:to-shiya"]
+    - endpoints: ["jr-west-common-imamiya:to-ara", "ashiharabashi:to-ima"]
     - endpoints: ["ashiharabashi:to-tase", "taisho:to-ara"]
     - endpoints: ["taisho:to-hete", "bentencho:to-tase"]
     - endpoints: ["bentencho:to-niku", "jr-west-common-nishikujo:to-hete"]
