@@ -9,17 +9,41 @@ topology:
       - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
 
   nodes:
+    kamo:
+      binds:
+        - ../../nodes/kamo/frr.conf:/etc/frr/frr.conf
+
+    kizu:
+      binds:
+        - ../../nodes/kizu/frr.conf:/etc/frr/frr.conf
+
+    narayama:
+      binds:
+        - ../../nodes/narayama/frr.conf:/etc/frr/frr.conf
+
+    nara:
+      binds:
+        - ../../nodes/nara/frr.conf:/etc/frr/frr.conf
+
+    oji:
+      binds:
+        - ../../nodes/oji/frr.conf:/etc/frr/frr.conf
+
+    kyuhoji:
+      binds:
+        - ../../nodes/kyuhoji/frr.conf:/etc/frr/frr.conf
+
     tennoji:
       binds:
         - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
-    
-    imamiya:
-      binds:
-        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
 
     shin-imamiya:
       binds:
         - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
+
+    imamiya:
+      binds:
+        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
 
     nishikujo:
       binds:
@@ -32,4 +56,3 @@ topology:
     kyobashi:
       binds:
         - ../../nodes/kyobashi/frr.conf:/etc/frr/frr.conf
-
