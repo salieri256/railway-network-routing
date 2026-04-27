@@ -1,0 +1,110 @@
+name: jr-west-jr-kyoto-line
+prefix: __lab-name
+topology:
+  defaults:
+    kind: linux
+    image: quay.io/frrouting/frr:10.4.0
+    binds:
+    - ../../nodes/common/daemons:/etc/frr/daemons
+    - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
+  nodes:
+    kyoto:
+      binds:
+      - ../../nodes/kyoto/frr.conf:/etc/frr/frr.conf
+    nishioji:
+      binds:
+      - ../../nodes/nishioji/frr.conf:/etc/frr/frr.conf
+    katsuragawa:
+      binds:
+      - ../../nodes/katsuragawa/frr.conf:/etc/frr/frr.conf
+    mukomachi:
+      binds:
+      - ../../nodes/mukomachi/frr.conf:/etc/frr/frr.conf
+    nagaokakyo:
+      binds:
+      - ../../nodes/nagaokakyo/frr.conf:/etc/frr/frr.conf
+    yamazaki:
+      binds:
+      - ../../nodes/yamazaki/frr.conf:/etc/frr/frr.conf
+    shimamoto:
+      binds:
+      - ../../nodes/shimamoto/frr.conf:/etc/frr/frr.conf
+    takatsuki:
+      binds:
+      - ../../nodes/takatsuki/frr.conf:/etc/frr/frr.conf
+    settsu-tonda:
+      binds:
+      - ../../nodes/settsu-tonda/frr.conf:/etc/frr/frr.conf
+    jr-sojiji:
+      binds:
+      - ../../nodes/jr-sojiji/frr.conf:/etc/frr/frr.conf
+    ibaraki:
+      binds:
+      - ../../nodes/ibaraki/frr.conf:/etc/frr/frr.conf
+    senrioka:
+      binds:
+      - ../../nodes/senrioka/frr.conf:/etc/frr/frr.conf
+    kishibe:
+      binds:
+      - ../../nodes/kishibe/frr.conf:/etc/frr/frr.conf
+    suita:
+      binds:
+      - ../../nodes/suita/frr.conf:/etc/frr/frr.conf
+    higashi-yodogawa:
+      binds:
+      - ../../nodes/higashi-yodogawa/frr.conf:/etc/frr/frr.conf
+    shin-osaka:
+      binds:
+      - ../../nodes/shin-osaka/frr.conf:/etc/frr/frr.conf
+    osaka:
+      binds:
+      - ../../nodes/osaka/frr.conf:/etc/frr/frr.conf
+  links:
+  - endpoints:
+    - kyoto:4-2-2
+    - nishioji:4-2-1
+  - endpoints:
+    - nishioji:4-2-16
+    - katsuragawa:4-2-2
+  - endpoints:
+    - katsuragawa:4-2-3
+    - mukomachi:4-2-16
+  - endpoints:
+    - mukomachi:4-2-4
+    - nagaokakyo:4-2-3
+  - endpoints:
+    - nagaokakyo:4-2-5
+    - yamazaki:4-2-4
+  - endpoints:
+    - yamazaki:4-2-15
+    - shimamoto:4-2-5
+  - endpoints:
+    - shimamoto:4-2-6
+    - takatsuki:4-2-15
+  - endpoints:
+    - takatsuki:4-2-7
+    - settsu-tonda:4-2-6
+  - endpoints:
+    - settsu-tonda:4-2-17
+    - jr-sojiji:4-2-7
+  - endpoints:
+    - jr-sojiji:4-2-8
+    - ibaraki:4-2-17
+  - endpoints:
+    - ibaraki:4-2-9
+    - senrioka:4-2-8
+  - endpoints:
+    - senrioka:4-2-10
+    - kishibe:4-2-9
+  - endpoints:
+    - kishibe:4-2-11
+    - suita:4-2-10
+  - endpoints:
+    - suita:4-2-12
+    - higashi-yodogawa:4-2-11
+  - endpoints:
+    - higashi-yodogawa:4-2-13
+    - shin-osaka:4-2-12
+  - endpoints:
+    - shin-osaka:4-2-14
+    - osaka:4-2-13
