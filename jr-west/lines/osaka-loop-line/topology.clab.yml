@@ -5,103 +5,121 @@ topology:
     kind: linux
     image: quay.io/frrouting/frr:10.4.0
     binds:
-      - ../../nodes/common/daemons:/etc/frr/daemons
-      - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
-
+    - ../../nodes/common/daemons:/etc/frr/daemons
+    - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
   nodes:
     tennoji:
       binds:
-        - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
     shin-imamiya:
       binds:
-        - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
     imamiya:
       binds:
-        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
     ashiharabashi:
       binds:
-        - ../../nodes/ashiharabashi/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/ashiharabashi/frr.conf:/etc/frr/frr.conf
     taisho:
       binds:
-        - ../../nodes/taisho/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/taisho/frr.conf:/etc/frr/frr.conf
     bentencho:
       binds:
-        - ../../nodes/bentencho/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/bentencho/frr.conf:/etc/frr/frr.conf
     nishikujo:
       binds:
-        - ../../nodes/nishikujo/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/nishikujo/frr.conf:/etc/frr/frr.conf
     noda:
       binds:
-        - ../../nodes/noda/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/noda/frr.conf:/etc/frr/frr.conf
     fukushima:
       binds:
-        - ../../nodes/fukushima/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/fukushima/frr.conf:/etc/frr/frr.conf
     osaka:
       binds:
-        - ../../nodes/osaka/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/osaka/frr.conf:/etc/frr/frr.conf
     temma:
       binds:
-        - ../../nodes/temma/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/temma/frr.conf:/etc/frr/frr.conf
     sakuranomiya:
       binds:
-        - ../../nodes/sakuranomiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/sakuranomiya/frr.conf:/etc/frr/frr.conf
     kyobashi:
       binds:
-        - ../../nodes/kyobashi/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kyobashi/frr.conf:/etc/frr/frr.conf
     osakajokoen:
       binds:
-        - ../../nodes/osakajokoen/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/osakajokoen/frr.conf:/etc/frr/frr.conf
     morinomiya:
       binds:
-        - ../../nodes/morinomiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/morinomiya/frr.conf:/etc/frr/frr.conf
     tamatsukuri:
       binds:
-        - ../../nodes/tamatsukuri/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/tamatsukuri/frr.conf:/etc/frr/frr.conf
     tsuruhashi:
       binds:
-        - ../../nodes/tsuruhashi/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/tsuruhashi/frr.conf:/etc/frr/frr.conf
     momodani:
       binds:
-        - ../../nodes/momodani/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/momodani/frr.conf:/etc/frr/frr.conf
     teradacho:
       binds:
-        - ../../nodes/teradacho/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/teradacho/frr.conf:/etc/frr/frr.conf
   links:
-    - endpoints: ["tennoji:to-shiya", "shin-imamiya:to-ten"]
-    - endpoints: ["shin-imamiya:to-ima", "imamiya:to-shiya"]
-    - endpoints: ["imamiya:to-ara", "ashiharabashi:to-ima"]
-    - endpoints: ["ashiharabashi:to-tase", "taisho:to-ara"]
-    - endpoints: ["taisho:to-hete", "bentencho:to-tase"]
-    - endpoints: ["bentencho:to-niku", "nishikujo:to-hete"]
-    - endpoints: ["nishikujo:to-nota", "noda:to-niku"]
-    - endpoints: ["noda:to-fuku", "fukushima:to-nota"]
-    - endpoints: ["fukushima:to-osa", "osaka:to-fuku"]
-    - endpoints: ["osaka:to-tema", "temma:to-osa"]
-    - endpoints: ["temma:to-sara", "sakuranomiya:to-tema"]
-    - endpoints: ["sakuranomiya:to-kiha", "kyobashi:to-sara"]
-    - endpoints: ["kyobashi:to-oshi", "osakajokoen:to-kiha"]
-    - endpoints: ["osakajokoen:to-momi", "morinomiya:to-oshi"]
-    - endpoints: ["morinomiya:to-tsuri", "tamatsukuri:to-momi"]
-    - endpoints: ["tamatsukuri:to-tsuha", "tsuruhashi:to-tsuri"]
-    - endpoints: ["tsuruhashi:to-moni", "momodani:to-tsuha"]
-    - endpoints: ["momodani:to-teta", "teradacho:to-moni"]
-    - endpoints: ["teradacho:to-ten", "tennoji:to-teta"]
+  - endpoints:
+    - tennoji:to-shiya
+    - shin-imamiya:to-ten
+  - endpoints:
+    - shin-imamiya:to-ima
+    - imamiya:to-shiya
+  - endpoints:
+    - imamiya:to-ara
+    - ashiharabashi:to-ima
+  - endpoints:
+    - ashiharabashi:to-tase
+    - taisho:to-ara
+  - endpoints:
+    - taisho:to-hete
+    - bentencho:to-tase
+  - endpoints:
+    - bentencho:to-niku
+    - nishikujo:to-hete
+  - endpoints:
+    - nishikujo:to-nota
+    - noda:to-niku
+  - endpoints:
+    - noda:to-fuku
+    - fukushima:to-nota
+  - endpoints:
+    - fukushima:to-osa
+    - osaka:to-fuku
+  - endpoints:
+    - osaka:to-tema
+    - temma:to-osa
+  - endpoints:
+    - temma:to-sara
+    - sakuranomiya:to-tema
+  - endpoints:
+    - sakuranomiya:to-kiha
+    - kyobashi:to-sara
+  - endpoints:
+    - kyobashi:to-oshi
+    - osakajokoen:to-kiha
+  - endpoints:
+    - osakajokoen:to-momi
+    - morinomiya:to-oshi
+  - endpoints:
+    - morinomiya:to-tsuri
+    - tamatsukuri:to-momi
+  - endpoints:
+    - tamatsukuri:to-tsuha
+    - tsuruhashi:to-tsuri
+  - endpoints:
+    - tsuruhashi:to-moni
+    - momodani:to-tsuha
+  - endpoints:
+    - momodani:to-teta
+    - teradacho:to-moni
+  - endpoints:
+    - teradacho:to-ten
+    - tennoji:to-teta

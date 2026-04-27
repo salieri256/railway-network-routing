@@ -5,117 +5,136 @@ topology:
     kind: linux
     image: quay.io/frrouting/frr:10.4.0
     binds:
-      - ../../nodes/common/daemons:/etc/frr/daemons
-      - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
-
+    - ../../nodes/common/daemons:/etc/frr/daemons
+    - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
   nodes:
     kamo:
       binds:
-        - ../../nodes/kamo/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kamo/frr.conf:/etc/frr/frr.conf
     kizu:
       binds:
-        - ../../nodes/kizu/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kizu/frr.conf:/etc/frr/frr.conf
     narayama:
       binds:
-        - ../../nodes/narayama/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/narayama/frr.conf:/etc/frr/frr.conf
     nara:
       binds:
-        - ../../nodes/nara/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/nara/frr.conf:/etc/frr/frr.conf
     koriyama:
       binds:
-        - ../../nodes/koriyama/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/koriyama/frr.conf:/etc/frr/frr.conf
     yamato-koizumi:
       binds:
-        - ../../nodes/yamato-koizumi/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/yamato-koizumi/frr.conf:/etc/frr/frr.conf
     horyuji:
       binds:
-        - ../../nodes/horyuji/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/horyuji/frr.conf:/etc/frr/frr.conf
     oji:
       binds:
-        - ../../nodes/oji/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/oji/frr.conf:/etc/frr/frr.conf
     sango:
       binds:
-        - ../../nodes/sango/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/sango/frr.conf:/etc/frr/frr.conf
     kawachi-katakami:
       binds:
-        - ../../nodes/kawachi-katakami/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kawachi-katakami/frr.conf:/etc/frr/frr.conf
     takaida:
       binds:
-        - ../../nodes/takaida/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/takaida/frr.conf:/etc/frr/frr.conf
     kashiwara:
       binds:
-        - ../../nodes/kashiwara/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kashiwara/frr.conf:/etc/frr/frr.conf
     shiki:
       binds:
-        - ../../nodes/shiki/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/shiki/frr.conf:/etc/frr/frr.conf
     yao:
       binds:
-        - ../../nodes/yao/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/yao/frr.conf:/etc/frr/frr.conf
     kyuhoji:
       binds:
-        - ../../nodes/kyuhoji/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kyuhoji/frr.conf:/etc/frr/frr.conf
     kami:
       binds:
-        - ../../nodes/kami/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/kami/frr.conf:/etc/frr/frr.conf
     hirano:
       binds:
-        - ../../nodes/hirano/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/hirano/frr.conf:/etc/frr/frr.conf
     tobushijomae:
       binds:
-        - ../../nodes/tobushijomae/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/tobushijomae/frr.conf:/etc/frr/frr.conf
     tennoji:
       binds:
-        - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
     shin-imamiya:
       binds:
-        - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
     imamiya:
       binds:
-        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
     jr-namba:
       binds:
-        - ../../nodes/jr-namba/frr.conf:/etc/frr/frr.conf
-
+      - ../../nodes/jr-namba/frr.conf:/etc/frr/frr.conf
   links:
-    - endpoints: ["kamo:to-kitsu", "kizu:to-kamo"]
-    - endpoints: ["kizu:to-naya", "narayama:to-kitsu"]
-    - endpoints: ["narayama:to-nara", "nara:to-naya"]
-    - endpoints: ["nara:to-kori", "koriyama:to-nara"]
-    - endpoints: ["koriyama:to-komi", "yamato-koizumi:to-kori"]
-    - endpoints: ["yamato-koizumi:to-hori", "horyuji:to-komi"]
-    - endpoints: ["horyuji:to-oshi", "oji:to-hori"]
-    - endpoints: ["oji:to-san", "sango:to-oshi"]
-    - endpoints: ["sango:to-kachi", "kawachi-katakami:to-san"]
-    - endpoints: ["kawachi-katakami:to-kai", "takaida:to-kachi"]
-    - endpoints: ["takaida:to-kashi", "kashiwara:to-kai"]
-    - endpoints: ["kashiwara:to-shiki", "shiki:to-kashi"]
-    - endpoints: ["shiki:to-yao", "yao:to-shiki"]
-    - endpoints: ["yao:to-kiho", "kyuhoji:to-yao"]
-    - endpoints: ["kyuhoji:to-kami", "kami:to-kiho"]
-    - endpoints: ["kami:to-hira", "hirano:to-kami"]
-    - endpoints: ["hirano:to-toi", "tobushijomae:to-hira"]
-    - endpoints: ["tobushijomae:to-ten", "tennoji:to-toi"]
-    - endpoints: ["tennoji:to-shiya-yama", "shin-imamiya:to-ten-yama"]
-    - endpoints: ["shin-imamiya:to-ima-yama", "imamiya:to-shiya-yama"]
-    - endpoints: ["imamiya:to-naha", "jr-namba:to-ima"]
+  - endpoints:
+    - kamo:to-kitsu
+    - kizu:to-kamo
+  - endpoints:
+    - kizu:to-naya
+    - narayama:to-kitsu
+  - endpoints:
+    - narayama:to-nara
+    - nara:to-naya
+  - endpoints:
+    - nara:to-kori
+    - koriyama:to-nara
+  - endpoints:
+    - koriyama:to-komi
+    - yamato-koizumi:to-kori
+  - endpoints:
+    - yamato-koizumi:to-hori
+    - horyuji:to-komi
+  - endpoints:
+    - horyuji:to-oshi
+    - oji:to-hori
+  - endpoints:
+    - oji:to-san
+    - sango:to-oshi
+  - endpoints:
+    - sango:to-kachi
+    - kawachi-katakami:to-san
+  - endpoints:
+    - kawachi-katakami:to-kai
+    - takaida:to-kachi
+  - endpoints:
+    - takaida:to-kashi
+    - kashiwara:to-kai
+  - endpoints:
+    - kashiwara:to-shiki
+    - shiki:to-kashi
+  - endpoints:
+    - shiki:to-yao
+    - yao:to-shiki
+  - endpoints:
+    - yao:to-kiho
+    - kyuhoji:to-yao
+  - endpoints:
+    - kyuhoji:to-kami
+    - kami:to-kiho
+  - endpoints:
+    - kami:to-hira
+    - hirano:to-kami
+  - endpoints:
+    - hirano:to-toi
+    - tobushijomae:to-hira
+  - endpoints:
+    - tobushijomae:to-ten
+    - tennoji:to-toi
+  - endpoints:
+    - tennoji:to-shiya-yama
+    - shin-imamiya:to-ten-yama
+  - endpoints:
+    - shin-imamiya:to-ima-yama
+    - imamiya:to-shiya-yama
+  - endpoints:
+    - imamiya:to-naha
+    - jr-namba:to-ima
