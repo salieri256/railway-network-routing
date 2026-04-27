@@ -9,14 +9,17 @@ topology:
       - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
 
   nodes:
-    jr-west-common-tennoji:
-      kind: ext-container
+    tennoji:
+      binds:
+        - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-shin-imamiya:
-      kind: ext-container
+    shin-imamiya:
+      binds:
+        - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-imamiya:
-      kind: ext-container
+    imamiya:
+      binds:
+        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
 
     ashiharabashi:
       binds:
@@ -30,8 +33,9 @@ topology:
       binds:
         - ../../nodes/bentencho/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-nishikujo:
-      kind: ext-container
+    nishikujo:
+      binds:
+        - ../../nodes/nishikujo/frr.conf:/etc/frr/frr.conf
 
     noda:
       binds:
@@ -41,8 +45,9 @@ topology:
       binds:
         - ../../nodes/fukushima/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-osaka:
-      kind: ext-container
+    osaka:
+      binds:
+        - ../../nodes/osaka/frr.conf:/etc/frr/frr.conf
 
     temma:
       binds:
@@ -52,8 +57,9 @@ topology:
       binds:
         - ../../nodes/sakuranomiya/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-kyobashi:
-      kind: ext-container
+    kyobashi:
+      binds:
+        - ../../nodes/kyobashi/frr.conf:/etc/frr/frr.conf
 
     osakajokoen:
       binds:
@@ -80,22 +86,22 @@ topology:
         - ../../nodes/teradacho/frr.conf:/etc/frr/frr.conf
 
   links:
-    - endpoints: ["jr-west-common-tennoji:to-shiya", "jr-west-common-shin-imamiya:to-ten"]
-    - endpoints: ["jr-west-common-shin-imamiya:to-ima", "jr-west-common-imamiya:to-shiya"]
-    - endpoints: ["jr-west-common-imamiya:to-ara", "ashiharabashi:to-ima"]
+    - endpoints: ["tennoji:to-shiya", "shin-imamiya:to-ten"]
+    - endpoints: ["shin-imamiya:to-ima", "imamiya:to-shiya"]
+    - endpoints: ["imamiya:to-ara", "ashiharabashi:to-ima"]
     - endpoints: ["ashiharabashi:to-tase", "taisho:to-ara"]
     - endpoints: ["taisho:to-hete", "bentencho:to-tase"]
-    - endpoints: ["bentencho:to-niku", "jr-west-common-nishikujo:to-hete"]
-    - endpoints: ["jr-west-common-nishikujo:to-nota", "noda:to-niku"]
+    - endpoints: ["bentencho:to-niku", "nishikujo:to-hete"]
+    - endpoints: ["nishikujo:to-nota", "noda:to-niku"]
     - endpoints: ["noda:to-fuku", "fukushima:to-nota"]
-    - endpoints: ["fukushima:to-osa", "jr-west-common-osaka:to-fuku"]
-    - endpoints: ["jr-west-common-osaka:to-tema", "temma:to-osa"]
+    - endpoints: ["fukushima:to-osa", "osaka:to-fuku"]
+    - endpoints: ["osaka:to-tema", "temma:to-osa"]
     - endpoints: ["temma:to-sara", "sakuranomiya:to-tema"]
-    - endpoints: ["sakuranomiya:to-kiha", "jr-west-common-kyobashi:to-sara"]
-    - endpoints: ["jr-west-common-kyobashi:to-oshi", "osakajokoen:to-kiha"]
+    - endpoints: ["sakuranomiya:to-kiha", "kyobashi:to-sara"]
+    - endpoints: ["kyobashi:to-oshi", "osakajokoen:to-kiha"]
     - endpoints: ["osakajokoen:to-momi", "morinomiya:to-oshi"]
     - endpoints: ["morinomiya:to-tsuri", "tamatsukuri:to-momi"]
     - endpoints: ["tamatsukuri:to-tsuha", "tsuruhashi:to-tsuri"]
     - endpoints: ["tsuruhashi:to-moni", "momodani:to-tsuha"]
     - endpoints: ["momodani:to-teta", "teradacho:to-moni"]
-    - endpoints: ["teradacho:to-ten", "jr-west-common-tennoji:to-teta"]
+    - endpoints: ["teradacho:to-ten", "tennoji:to-teta"]

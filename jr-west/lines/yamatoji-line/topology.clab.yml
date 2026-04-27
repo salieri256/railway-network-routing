@@ -9,17 +9,21 @@ topology:
       - ../../nodes/common/vtysh.conf:/etc/frr/vtysh.conf
 
   nodes:
-    jr-west-common-kamo:
-      kind: ext-container
+    kamo:
+      binds:
+        - ../../nodes/kamo/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-kizu:
-      kind: ext-container
+    kizu:
+      binds:
+        - ../../nodes/kizu/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-narayama:
-      kind: ext-container
+    narayama:
+      binds:
+        - ../../nodes/narayama/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-nara:
-      kind: ext-container
+    nara:
+      binds:
+        - ../../nodes/nara/frr.conf:/etc/frr/frr.conf
 
     koriyama:
       binds:
@@ -33,8 +37,9 @@ topology:
       binds:
         - ../../nodes/horyuji/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-oji:
-      kind: ext-container
+    oji:
+      binds:
+        - ../../nodes/oji/frr.conf:/etc/frr/frr.conf
 
     sango:
       binds:
@@ -60,8 +65,9 @@ topology:
       binds:
         - ../../nodes/yao/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-kyuhoji:
-      kind: ext-container
+    kyuhoji:
+      binds:
+        - ../../nodes/kyuhoji/frr.conf:/etc/frr/frr.conf
 
     kami:
       binds:
@@ -75,38 +81,41 @@ topology:
       binds:
         - ../../nodes/tobushijomae/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-tennoji:
-      kind: ext-container
+    tennoji:
+      binds:
+        - ../../nodes/tennoji/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-shin-imamiya:
-      kind: ext-container
+    shin-imamiya:
+      binds:
+        - ../../nodes/shin-imamiya/frr.conf:/etc/frr/frr.conf
 
-    jr-west-common-imamiya:
-      kind: ext-container
+    imamiya:
+      binds:
+        - ../../nodes/imamiya/frr.conf:/etc/frr/frr.conf
 
     jr-namba:
       binds:
         - ../../nodes/jr-namba/frr.conf:/etc/frr/frr.conf
 
   links:
-    - endpoints: ["jr-west-common-kamo:to-kitsu", "jr-west-common-kizu:to-kamo"]
-    - endpoints: ["jr-west-common-kizu:to-naya", "jr-west-common-narayama:to-kitsu"]
-    - endpoints: ["jr-west-common-narayama:to-nara", "jr-west-common-nara:to-naya"]
-    - endpoints: ["jr-west-common-nara:to-kori", "koriyama:to-nara"]
+    - endpoints: ["kamo:to-kitsu", "kizu:to-kamo"]
+    - endpoints: ["kizu:to-naya", "narayama:to-kitsu"]
+    - endpoints: ["narayama:to-nara", "nara:to-naya"]
+    - endpoints: ["nara:to-kori", "koriyama:to-nara"]
     - endpoints: ["koriyama:to-komi", "yamato-koizumi:to-kori"]
     - endpoints: ["yamato-koizumi:to-hori", "horyuji:to-komi"]
-    - endpoints: ["horyuji:to-oshi", "jr-west-common-oji:to-hori"]
-    - endpoints: ["jr-west-common-oji:to-san", "sango:to-oshi"]
+    - endpoints: ["horyuji:to-oshi", "oji:to-hori"]
+    - endpoints: ["oji:to-san", "sango:to-oshi"]
     - endpoints: ["sango:to-kachi", "kawachi-katakami:to-san"]
     - endpoints: ["kawachi-katakami:to-kai", "takaida:to-kachi"]
     - endpoints: ["takaida:to-kashi", "kashiwara:to-kai"]
     - endpoints: ["kashiwara:to-shiki", "shiki:to-kashi"]
     - endpoints: ["shiki:to-yao", "yao:to-shiki"]
-    - endpoints: ["yao:to-kiho", "jr-west-common-kyuhoji:to-yao"]
-    - endpoints: ["jr-west-common-kyuhoji:to-kami", "kami:to-kiho"]
+    - endpoints: ["yao:to-kiho", "kyuhoji:to-yao"]
+    - endpoints: ["kyuhoji:to-kami", "kami:to-kiho"]
     - endpoints: ["kami:to-hira", "hirano:to-kami"]
     - endpoints: ["hirano:to-toi", "tobushijomae:to-hira"]
-    - endpoints: ["tobushijomae:to-ten", "jr-west-common-tennoji:to-toi"]
-    - endpoints: ["jr-west-common-tennoji:to-shiya-yama", "jr-west-common-shin-imamiya:to-ten-yama"]
-    - endpoints: ["jr-west-common-shin-imamiya:to-ima-yama", "jr-west-common-imamiya:to-shiya-yama"]
-    - endpoints: ["jr-west-common-imamiya:to-naha", "jr-namba:to-ima"]
+    - endpoints: ["tobushijomae:to-ten", "tennoji:to-toi"]
+    - endpoints: ["tennoji:to-shiya-yama", "shin-imamiya:to-ten-yama"]
+    - endpoints: ["shin-imamiya:to-ima-yama", "imamiya:to-shiya-yama"]
+    - endpoints: ["imamiya:to-naha", "jr-namba:to-ima"]
