@@ -76,65 +76,65 @@ topology:
       - ../../nodes/jr-namba/frr.conf:/etc/frr/frr.conf
   links:
   - endpoints:
-    - kamo:to-kitsu
-    - kizu:to-kamo
+    - kamo:4-7-2
+    - kizu:4-7-1
   - endpoints:
-    - kizu:to-naya
-    - narayama:to-kitsu
+    - kizu:4-7-3
+    - narayama:4-7-2
   - endpoints:
-    - narayama:to-nara
-    - nara:to-naya
+    - narayama:4-7-4
+    - nara:4-7-3
   - endpoints:
-    - nara:to-kori
-    - koriyama:to-nara
+    - nara:4-7-5
+    - koriyama:4-7-4
   - endpoints:
-    - koriyama:to-komi
-    - yamato-koizumi:to-kori
+    - koriyama:4-7-6
+    - yamato-koizumi:4-7-5
   - endpoints:
-    - yamato-koizumi:to-hori
-    - horyuji:to-komi
+    - yamato-koizumi:4-7-7
+    - horyuji:4-7-6
   - endpoints:
-    - horyuji:to-oshi
-    - oji:to-hori
+    - horyuji:4-7-8
+    - oji:4-7-7
   - endpoints:
-    - oji:to-san
-    - sango:to-oshi
+    - oji:4-7-9
+    - sango:4-7-8
   - endpoints:
-    - sango:to-kachi
-    - kawachi-katakami:to-san
+    - sango:4-7-10
+    - kawachi-katakami:4-7-9
   - endpoints:
-    - kawachi-katakami:to-kai
-    - takaida:to-kachi
+    - kawachi-katakami:4-7-11
+    - takaida:4-7-10
   - endpoints:
-    - takaida:to-kashi
-    - kashiwara:to-kai
+    - takaida:4-7-12
+    - kashiwara:4-7-11
   - endpoints:
-    - kashiwara:to-shiki
-    - shiki:to-kashi
+    - kashiwara:4-7-13
+    - shiki:4-7-12
   - endpoints:
-    - shiki:to-yao
-    - yao:to-shiki
+    - shiki:4-7-14
+    - yao:4-7-13
   - endpoints:
-    - yao:to-kiho
-    - kyuhoji:to-yao
+    - yao:4-7-15
+    - kyuhoji:4-7-14
   - endpoints:
-    - kyuhoji:to-kami
-    - kami:to-kiho
+    - kyuhoji:4-7-16
+    - kami:4-7-15
   - endpoints:
-    - kami:to-hira
-    - hirano:to-kami
+    - kami:4-7-17
+    - hirano:4-7-16
   - endpoints:
-    - hirano:to-toi
-    - tobushijomae:to-hira
+    - hirano:4-7-18
+    - tobushijomae:4-7-17
   - endpoints:
-    - tobushijomae:to-ten
-    - tennoji:to-toi
+    - tobushijomae:4-7-19
+    - tennoji:4-7-18
   - endpoints:
-    - tennoji:to-shiya-yama
-    - shin-imamiya:to-ten-yama
+    - tennoji:4-7-20
+    - shin-imamiya:4-7-19
   - endpoints:
-    - shin-imamiya:to-ima-yama
-    - imamiya:to-shiya-yama
+    - shin-imamiya:4-7-21
+    - imamiya:4-7-20
   - endpoints:
-    - imamiya:to-naha
-    - jr-namba:to-ima
+    - imamiya:4-7-22
+    - jr-namba:4-7-21

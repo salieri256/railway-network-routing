@@ -67,59 +67,59 @@ topology:
       - ../../nodes/teradacho/frr.conf:/etc/frr/frr.conf
   links:
   - endpoints:
-    - tennoji:to-shiya
-    - shin-imamiya:to-ten
+    - tennoji:4-23-2
+    - shin-imamiya:4-23-1
   - endpoints:
-    - shin-imamiya:to-ima
-    - imamiya:to-shiya
+    - shin-imamiya:4-23-3
+    - imamiya:4-23-2
   - endpoints:
-    - imamiya:to-ara
-    - ashiharabashi:to-ima
+    - imamiya:4-23-4
+    - ashiharabashi:4-23-3
   - endpoints:
-    - ashiharabashi:to-tase
-    - taisho:to-ara
+    - ashiharabashi:4-23-5
+    - taisho:4-23-4
   - endpoints:
-    - taisho:to-hete
-    - bentencho:to-tase
+    - taisho:4-23-6
+    - bentencho:4-23-5
   - endpoints:
-    - bentencho:to-niku
-    - nishikujo:to-hete
+    - bentencho:4-23-7
+    - nishikujo:4-23-6
   - endpoints:
-    - nishikujo:to-nota
-    - noda:to-niku
+    - nishikujo:4-23-8
+    - noda:4-23-7
   - endpoints:
-    - noda:to-fuku
-    - fukushima:to-nota
+    - noda:4-23-9
+    - fukushima:4-23-8
   - endpoints:
-    - fukushima:to-osa
-    - osaka:to-fuku
+    - fukushima:4-23-10
+    - osaka:4-23-9
   - endpoints:
-    - osaka:to-tema
-    - temma:to-osa
+    - osaka:4-23-11
+    - temma:4-23-10
   - endpoints:
-    - temma:to-sara
-    - sakuranomiya:to-tema
+    - temma:4-23-12
+    - sakuranomiya:4-23-11
   - endpoints:
-    - sakuranomiya:to-kiha
-    - kyobashi:to-sara
+    - sakuranomiya:4-23-13
+    - kyobashi:4-23-12
   - endpoints:
-    - kyobashi:to-oshi
-    - osakajokoen:to-kiha
+    - kyobashi:4-23-14
+    - osakajokoen:4-23-13
   - endpoints:
-    - osakajokoen:to-momi
-    - morinomiya:to-oshi
+    - osakajokoen:4-23-15
+    - morinomiya:4-23-14
   - endpoints:
-    - morinomiya:to-tsuri
-    - tamatsukuri:to-momi
+    - morinomiya:4-23-16
+    - tamatsukuri:4-23-15
   - endpoints:
-    - tamatsukuri:to-tsuha
-    - tsuruhashi:to-tsuri
+    - tamatsukuri:4-23-17
+    - tsuruhashi:4-23-16
   - endpoints:
-    - tsuruhashi:to-moni
-    - momodani:to-tsuha
+    - tsuruhashi:4-23-18
+    - momodani:4-23-17
   - endpoints:
-    - momodani:to-teta
-    - teradacho:to-moni
+    - momodani:4-23-19
+    - teradacho:4-23-18
   - endpoints:
-    - teradacho:to-ten
-    - tennoji:to-teta
+    - teradacho:4-23-1
+    - tennoji:4-23-19
